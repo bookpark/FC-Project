@@ -18,8 +18,12 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from restaurants.views import restaurant_list, restaurant_detail
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^restaurant/$', restaurant_list, name='restaurant-list'),
+    url(r'^restaurant/(?P<pk>\d+)/$', restaurant_detail, name='restaurant-detail'),
 ]
 urlpatterns += static(
     settings.MEDIA_URL,

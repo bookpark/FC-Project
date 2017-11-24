@@ -78,5 +78,5 @@ class ReservationTable(models.Model):
 
 class ReservationInfo(models.Model):
     table = models.ForeignKey('ReservationTable', related_name='reservations')
-    time = models.CharField(max_length=1, choices=CHOICES_TIME)
+    time = models.CharField(max_length=2, choices=CHOICES_TIME)
     date = models.DateField()
