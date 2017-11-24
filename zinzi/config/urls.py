@@ -19,14 +19,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from members import views
-from restaurants import views as restauran_view
+from reservations.views import reserve
+from restaurants import views as restaurant_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^signin/$', views.signin, name='signin'),
-    url(r'^restaurant/$', restauran_view.restaurant_list, name='restaurant-list'),
-    url(r'^restaurant/(?P<pk>\d+)/$', restauran_view.restaurant_detail, name='restaurant-detail'),
+    url(r'^restaurant/$', restaurant_view.restaurant_list, name='restaurant-list'),
+    url(r'^restaurant/(?P<pk>\d+)/$', restaurant_view.restaurant_detail, name='restaurant-detail'),
+    url(r'^reservation/(?P<info_pk>\d+)/$', reserve, name='reserve'),
 ]
 urlpatterns += static(
     settings.MEDIA_URL,

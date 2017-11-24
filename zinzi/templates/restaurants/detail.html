@@ -17,7 +17,7 @@
     </ul>
         <img src="{{ restaurant.thumbnail.url }}" alt="">
         {% for reserv_info in reserv_infos %}
-            <p>{{ reserv_info.date }} - {{ reserv_info.time }}시</p>
+            <p><a href="{% url 'reserve' info_pk=reserv_info.pk %}">{{ reserv_info.date }} - {{ reserv_info.time }}시</a></p>
         {% endfor %}
 </body>
 </html>

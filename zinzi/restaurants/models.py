@@ -1,3 +1,5 @@
+from datetime import time
+
 from django.db import models
 
 CHOICES_RESTAURANT_TYPE = (
@@ -21,21 +23,21 @@ CHOICES_PRICE = (
     ('v', 'Very Expensive'),
 )
 CHOICES_TIME = (
-    ('9', '9시'),
-    ('10', '10시'),
-    ('11', '11시'),
-    ('12', '12시'),
-    ('13', '13시'),
-    ('14', '14시'),
-    ('15', '15시'),
-    ('16', '16시'),
-    ('17', '17시'),
-    ('18', '18시'),
-    ('19', '19시'),
-    ('20', '20시'),
-    ('21', '22시'),
-    ('23', '23시'),
-    ('24', '24시'),
+    (time(9, 00, 00), '9시'),
+    (time(10, 00, 00), '10시'),
+    (time(11, 00, 00), '11시'),
+    # ('12', '12시'),
+    # ('13', '13시'),
+    # ('14', '14시'),
+    # ('15', '15시'),
+    # ('16', '16시'),
+    # ('17', '17시'),
+    # ('18', '18시'),
+    # ('19', '19시'),
+    # ('20', '20시'),
+    # ('21', '22시'),
+    # ('23', '23시'),
+    # ('24', '24시'),
 )
 
 
@@ -78,5 +80,5 @@ class ReservationTable(models.Model):
 
 class ReservationInfo(models.Model):
     table = models.ForeignKey('ReservationTable', related_name='reservations')
-    time = models.CharField(max_length=2, choices=CHOICES_TIME)
+    time = models.TimeField(choices=CHOICES_TIME)
     date = models.DateField()

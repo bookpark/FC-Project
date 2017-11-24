@@ -15,10 +15,10 @@ class SignupForm(UserCreationForm):
             'email',
             'password1',
             'password2',
-            'nickname',
-            'phone_number',
-            'profile_image',
-            'preferences',
+            # 'nickname',
+            # 'phone_number',
+            # 'profile_image',
+            # 'preferences',
         )
 
 
