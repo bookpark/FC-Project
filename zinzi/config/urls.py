@@ -18,8 +18,12 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from members import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^signin/$', views.signin, name='signin'),
 ]
 urlpatterns += static(
     settings.MEDIA_URL,
