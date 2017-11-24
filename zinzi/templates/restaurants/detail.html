@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant detail</title>
+</head>
+<body>
+    <h1>{{ restaurant.name }}</h1>
+    <ul>
+        <li>{{ restaurant.city }}/{{ restaurant.district }}/{{ restaurant.detail_address }}</li>
+        <li>{{ restaurant.contact_number }}</li>
+        <li>{{ restaurant.restaurant_type }}</li>
+        <li>{{ restaurant.average_price }}</li>
+    </ul>
+        <img src="{{ restaurant.thumbnail.url }}" alt="">
+        {% for reserv_info in reserv_infos %}
+            <p>{{ reserv_info.date }} - {{ reserv_info.time }}시</p>
+        {% endfor %}
+</body>
+</html>
