@@ -26,3 +26,14 @@ def reserve(request, info_pk):
                               )
     reservation.save()
     return redirect('restaurant')
+
+
+def reservation_complete(request, pk):
+    reservation = get_object_or_404(
+        Reservation,
+        pk=pk
+    )
+    context = {
+        'reservation': reservation
+    }
+    return render(request, 'reservations/complete.html', context)
