@@ -69,7 +69,7 @@ class Menu(models.Model):
 
 
 class ImageForRestaurant(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to='restaurant')
     restaurant = models.ForeignKey(Restaurant)
 
 
