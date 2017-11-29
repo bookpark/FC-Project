@@ -27,3 +27,7 @@ class Reservation(models.Model):
     is_confirmed = models.BooleanField(
         default=False,
     )
+
+
+class TestModel(models.Model):
+    test_field = models.TextField()

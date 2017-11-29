@@ -18,11 +18,12 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from reservations.views import test
+from reservations.views import test, TestList
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^test/$', test)
+    url(r'^test/$', test),
+    url(r'^api/test/$', TestList.as_view(), name='api-test'),
 ]
 urlpatterns += static(
     settings.MEDIA_URL,
