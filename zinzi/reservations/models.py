@@ -30,4 +30,4 @@ class Reservation(models.Model):
 
 
 class TestModel(models.Model):
-    test_field = models.TextField()
+    imp_uid = models.TextField()

@@ -7,5 +7,5 @@ class TestSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestModel
         fields = (
-            'test_field',
+            'imp_uid',
         )
