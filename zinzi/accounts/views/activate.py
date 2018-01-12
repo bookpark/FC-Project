@@ -23,5 +23,5 @@ def activate(request, uidb64=None, token=None):
         user.is_active = True
         user.save()
         Profile.objects.create(user=user)
-        return redirect('http://localhost:8000/')
-    return redirect('http://localhost:8000/accounts/signup/')
+        return redirect('http://isaccchoi.kr/')
+    return redirect('http://isaccchoi.kr/')
